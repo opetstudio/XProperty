@@ -1,18 +1,21 @@
 import React from 'react'
 import { createStackNavigator as StackNavigator, createDrawerNavigator as DrawerNavigator, createSwitchNavigator } from 'react-navigation'
-import Sidebar from '../Screens/Sidebar'
 import navigatorHelper from '../Lib/helper/navigator'
 import { isIphoneX } from '../Lib/helper/platform'
 
+import ScreenSidebar from '../Screens/Sidebar/ScreenSidebar'
 import ScreenLogin from '../Screens/Login/ScreenLogin'
 import ScreenHome from '../Screens/Home/ScreenHome'
 import ScreenSignup from '../Screens/Signup/ScreenSignup'
 import ScreenAuthentication from '../Screens/Authentication/ScreenAuthentication'
+import ScreenListProjects from '../Screens/ListProjects/ScreenListProjects'
+import ScreenDetailProject from '../Screens/DetailProject/ScreenDetailProject'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const menuRoutes = {
-  ScreenHome: { screen: ScreenHome, navigationOptions: { drawerLabel: 'Home' } }
+  ScreenHome: { screen: ScreenHome, navigationOptions: { drawerLabel: 'Home' } },
+  ScreenListProjects: { screen: ScreenListProjects, navigationOptions: { drawerLabel: 'All Projects' } }
 }
 navigatorHelper.setMenuNavigationRoutes(menuRoutes)
 const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
@@ -27,12 +30,12 @@ const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
   // navigationOptions: {
   //   headerStyle: styles.header
   // },
-  contentComponent: props => <Sidebar {...props} />
+  contentComponent: props => <ScreenSidebar {...props} />
   // contentComponent: props => <Drawer {...props} />
 })
 const loggedinNavigator = StackNavigator({
   DrawerMenuNavigator: { screen: DrawerMenuNavigator },
-  ScreenDashboard: { screen: ScreenHome }
+  ScreenDetailProject: { screen: ScreenDetailProject }
 }, {
   // Default config for all screens
   headerMode: 'none',

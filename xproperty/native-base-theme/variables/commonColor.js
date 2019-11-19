@@ -150,7 +150,7 @@ export default {
 
   // Font
   DefaultFontSize: 16,
-  fontFamily: platform === PLATFORM.IOS ? 'System' : 'Tomorrow-Medium',
+  fontFamily: platform === PLATFORM.IOS ? 'Tomorrow-Medium' : 'Tomorrow-Medium',
   // fontFamily: platform === PLATFORM.IOS ? 'System' : 'Roboto',
   fontSizeBase: 15,
   get fontSizeH1() {
@@ -278,7 +278,7 @@ export default {
 
   // Title
   // titleFontfamily: platform === PLATFORM.IOS ? 'System' : 'Roboto_medium',
-  titleFontfamily: platform === PLATFORM.IOS ? 'System' : 'Tomorrow-Medium',
+  titleFontfamily: platform === PLATFORM.IOS ? 'Tomorrow-Medium' : 'Tomorrow-Medium',
   titleFontSize: platform === PLATFORM.IOS ? 17 : 19,
   subTitleFontSize: platform === PLATFORM.IOS ? 11 : 14,
   subtitleColor: platform === PLATFORM.IOS ? '#000' : '#fff',

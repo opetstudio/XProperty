@@ -74,6 +74,23 @@
 		<string>rubicon-icon-font.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>HelveticaBold.ttf</string>
+		<string>HelveticaBold.woff</string>
+		<string>HelveticaNeue.ttf</string>
+		<string>HelveticaNeue.woff</string>
+		<string>HelveticaNeueBold.ttf</string>
+		<string>HelveticaNeueBold.woff</string>
+		<string>HelveticaNeueLight.ttf</string>
+		<string>HelveticaNeueLight.woff</string>
+		<string>HelveticaNeueLTPro-Lt.otf</string>
+		<string>HelveticaNeueThin.ttf</string>
+		<string>HelveticaNeueThin.woff</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>roboto-regular.ttf</string>
+		<string>Tomorrow-Medium.ttf</string>
+		<string>tselicon.ttf</string>
+		<string>tselicon.woff</string>
 	</array>
 </dict>
 </plist>

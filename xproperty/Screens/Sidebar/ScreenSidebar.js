@@ -19,61 +19,38 @@ const drawerCover = Images.drawerCover
 const drawerImage = Images.drawerImage
 const datas = [
   {
-    name: 'Anatomy',
+    name: 'All Projects',
+    route: 'ScreenListProjects',
+    icon: 'phone-portrait',
+    bg: '#C5F442'
+  },
+  {
+    name: 'All Projects',
     route: 'Anatomy',
     icon: 'phone-portrait',
     bg: '#C5F442'
   },
   {
-    name: 'Header',
-    route: 'Header',
-    icon: 'arrow-up',
-    // bg: '#477EEA',
-    // types: '11'
+    name: 'All Projects',
+    route: 'Anatomy',
+    icon: 'phone-portrait',
+    bg: '#C5F442'
   },
   {
-    name: 'Footer',
-    route: 'Footer',
-    icon: 'arrow-down',
-    // bg: '#DA4437',
-    // types: '4'
+    name: 'All Projects',
+    route: 'Anatomy',
+    icon: 'phone-portrait',
+    bg: '#C5F442'
   },
   {
-    name: 'Accordion',
-    route: 'NHAccordion',
-    icon: 'repeat',
-    // bg: '#C5F442',
-    // types: '5'
-  },
-  {
-    name: 'Actionsheet',
-    route: 'Actionsheet',
-    icon: 'easel',
-    // bg: '#C5F442'
-  },
-  {
-    name: 'Badge',
-    route: 'NHBadge',
-    icon: 'notifications',
-    // bg: '#4DCAE0'
-  },
-  {
-    name: 'Button',
-    route: 'NHButton',
-    icon: 'radio-button-off',
-    // bg: '#1EBC7C',
-    // types: '9'
-  },
-  {
-    name: 'Card',
-    route: 'NHCard',
-    icon: 'keypad',
-    // bg: '#B89EF5',
-    // types: '8'
+    name: 'All Projects',
+    route: 'Anatomy',
+    icon: 'phone-portrait',
+    bg: '#C5F442'
   }
 ]
 
-class SideBar extends Component {
+class ScreenSidebar extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -83,6 +60,7 @@ class SideBar extends Component {
   }
 
   render () {
+    console.log('this.props===>', this.props)
     return (
       <Container>
         <Content
@@ -137,4 +115,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar
+export default ScreenSidebar

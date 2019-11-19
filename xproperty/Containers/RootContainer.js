@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Root, StyleProvider } from 'native-base'
+import { Root } from 'native-base'
 import { connect } from 'react-redux'
 // import SplashScreen from 'react-native-splash-screen'
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'
-import { isIphoneX } from '../Lib/helper/platform'
 import StartupActions from '../Redux/StartupRedux'
 import WebsocketActions from '../Redux/WebsocketRedux'
 import ReduxPersist from '../Config/ReduxPersist'
@@ -12,16 +11,10 @@ import { SessionSelectors } from '../Redux/SessionRedux'
 
 // component
 import StyledView from '../Components/StyledView'
-
-import { View, SafeAreaView, Text, StyleSheet } from 'react-native'
-import { Metrics } from '../Themes'
-
-// Styles
-import { Colors } from '../Themes'
+import { Images } from '../Themes'
 
 import PopupActions, { PopupSelectors } from '../Redux/PopupRedux'
 import AppActions, { AppSelectors } from '../Redux/AppRedux'
-import metrics from '../Themes/Metrics'
 
 class RootContainer extends Component {
   constructor (props) {
