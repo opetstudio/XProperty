@@ -51,13 +51,13 @@ class ScreenListProjects extends Component {
           </Body>
           <Right />
         </Header>
-        <Content>
+        <Content padder>
           <List
             dataArray={datas}
             renderRow={data =>
               <ListItem
                 noBorder
-                style={{ paddingBottom: 2, paddingTop: 2 }}
+                style={{ paddingBottom: 2, paddingTop: 2, paddingRight: 0, marginLeft: 0 }}
               >
                 <TouchableOpacity style={{ flex: 1 }} onPress={() => this.props.navigation.navigate('ScreenDetailProject')}>
                   <Card style={styles.mb}>

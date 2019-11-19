@@ -12,7 +12,7 @@ import {
 } from 'native-base'
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import { ImageBackground, View, StatusBar } from 'react-native'
-import Swiper from './Swiper'
+import Carousel from '../../Components/Carousel'
 import Footer from '../../Containers/Footer'
 import { Images } from '../../Themes'
 
@@ -41,7 +41,7 @@ class ScreenHome extends Component {
         </Header>
         <Content>
           <View style={{ height: 300 }}>
-            <Swiper />
+            <Carousel />
           </View>
           <Grid style={{ minHeight: 400 }}>
             <Col>

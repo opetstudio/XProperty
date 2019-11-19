@@ -17,8 +17,9 @@ import {
   Text
 } from 'native-base'
 // import { Grid, Row, Col } from 'react-native-easy-grid'
-import { StatusBar, Image } from 'react-native'
+import { StatusBar, Image, View } from 'react-native'
 import { Images } from '../../Themes'
+import Carousel from '../../Components/Carousel'
 
 const cardImage = Images.cardImage2
 class ScreenDetailProject extends Component {
@@ -38,15 +39,9 @@ class ScreenDetailProject extends Component {
           <Right />
         </Header>
         <Content>
-          <Image
-            style={{
-              resizeMode: 'cover',
-              width: null,
-              height: 200,
-              flex: 1
-            }}
-            source={cardImage}
-          />
+          <View style={{ height: 300 }}>
+            <Carousel />
+          </View>
         </Content>
       </Container>
     )
