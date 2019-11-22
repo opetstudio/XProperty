@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Image } from 'react-native';
+import React, { Component } from 'react'
+import { Image, View, ImageBackground } from 'react-native'
 import {
   Content,
   Text,
@@ -11,8 +11,8 @@ import {
   Right,
   Badge,
   Thumbnail
-} from 'native-base';
-import styles from './style';
+} from 'native-base'
+import styles from './style'
 import { Images } from '../../Themes'
 
 const drawerCover = Images.drawerCover
@@ -65,14 +65,17 @@ class ScreenSidebar extends Component {
       <Container>
         <Content
           bounces={false}
-          style={{ flex: 1, backgroundColor: '#fff', top: -1 }}
+          style={{ flex: 1, backgroundColor: '#fff' }}
         >
-          <Image source={drawerCover} style={styles.drawerCover} />
-          <Thumbnail large source={drawerImage} style={styles.drawerImage} />
-          <Text style={styles.welcomeText}>Welcome</Text>
-          <Text style={styles.userNameText}>Nofrets Poai</Text>
-          {/* <Image square style={styles.drawerImage} source={drawerImage} /> */}
-
+          <ImageBackground source={drawerCover} style={{ flex: 1, height: 250, backgroundColor: 'blue', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', alignItems: 'stretch' }}>
+            <View style={{ justifyContent: 'center', width: 90, padding: 10 }}>
+              <Thumbnail large source={drawerImage} style={{ backgroundColor: 'red' }} />
+            </View>
+            <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+              <Text style={{ fontSize: 12, color: '#fff' }}>Welcome</Text>
+              <Text style={{ color: '#fff' }}>Nofrets Poai</Text>
+            </View>
+          </ImageBackground>
           <List
             dataArray={datas}
             renderRow={data =>
