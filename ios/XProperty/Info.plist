@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+  <key>CodePushDeploymentKey</key>
+  <string>$(CODEPUSH_KEY)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -34,6 +36,10 @@
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
+        <key>codepush.azurewebsites.net</key>
+        <dict/>
+        <key>codepush.appcenter.ms</key>
+        <dict/>
 			</dict>
 		</dict>
 	</dict>
