@@ -19,30 +19,35 @@ const drawerCover = Images.drawerCover
 const drawerImage = Images.drawerImage
 const datas = [
   {
+    id: 1,
     name: 'All Projects',
     route: 'ScreenListProjects',
     icon: 'phone-portrait',
     bg: '#C5F442'
   },
   {
+    id: 2,
     name: 'All Projects',
     route: 'Anatomy',
     icon: 'phone-portrait',
     bg: '#C5F442'
   },
   {
+    id: 3,
     name: 'All Projects',
     route: 'Anatomy',
     icon: 'phone-portrait',
     bg: '#C5F442'
   },
   {
+    id: 4,
     name: 'All Projects',
     route: 'Anatomy',
     icon: 'phone-portrait',
     bg: '#C5F442'
   },
   {
+    id: 5,
     name: 'All Projects',
     route: 'Anatomy',
     icon: 'phone-portrait',
@@ -67,7 +72,7 @@ class ScreenSidebar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: '#fff' }}
         >
-          <ImageBackground source={drawerCover} style={{ flex: 1, height: 250, backgroundColor: 'blue', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', alignItems: 'stretch' }}>
+          <ImageBackground source={drawerCover} style={{ flex: 1, height: 250, flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}>
             <View style={{ justifyContent: 'center', width: 90, padding: 10 }}>
               <Thumbnail large source={drawerImage} style={{ backgroundColor: 'red' }} />
             </View>
@@ -78,6 +83,7 @@ class ScreenSidebar extends Component {
           </ImageBackground>
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => index.toString()}
             renderRow={data =>
               <ListItem
                 button

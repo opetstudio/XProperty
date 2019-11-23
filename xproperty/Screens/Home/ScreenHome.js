@@ -11,7 +11,7 @@ import {
   Title
 } from 'native-base'
 import { Grid, Row, Col } from 'react-native-easy-grid'
-import { ImageBackground, View, StatusBar } from 'react-native'
+import { ImageBackground, View, StatusBar, Platform } from 'react-native'
 import Carousel from '../../Components/Carousel'
 import Footer from '../../Containers/Footer'
 import { Images } from '../../Themes'
@@ -21,7 +21,7 @@ class ScreenHome extends Component {
     return (
       <Container style={{ backgroundColor: '#fff' }}>
         <Header>
-          <StatusBar barStyle='light-content' />
+          {Platform.OS === 'android' && <StatusBar barStyle='light-content' />}
           <Left>
             <Button
               transparent
