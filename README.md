@@ -23,6 +23,11 @@ cd android
 ./gradlew app:assembleRelease
 ```
 
+## run ios on device
+```bash
+react-native run-ios --device "Anvere’s iPhone"
+```
+
 ## Install Plugin
 #### react-native-maps
 

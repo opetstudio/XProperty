@@ -10,6 +10,14 @@ import ScreenSignup from '../Screens/Signup/ScreenSignup'
 import ScreenAuthentication from '../Screens/Authentication/ScreenAuthentication'
 import ScreenListProjects from '../Screens/ListProjects/ScreenListProjects'
 import ScreenDetailProject from '../Screens/DetailProject/ScreenDetailProject'
+import ScreenListClusters from '../Screens/ListClusters/ScreenListClusters'
+import ScreenDetailCluster from '../Screens/DetailCluster/ScreenDetailCluster'
+import ScreenListUnits from '../Screens/ListUnits/ScreenListUnits'
+import ScreenBooking from '../Screens/Booking/ScreenBooking'
+import ScreenListPaymentPlan from '../Screens/ListPaymentPlan/ScreenListPaymentPlan'
+import ScreenDetailPaymentPlan from '../Screens/DetailPaymentPlan/ScreenDetailPaymentPlan'
+import ScreenDetailBooking from '../Screens/DetailBooking/ScreenDetailBooking'
+import ScreenMapLayout from '../Screens/MapLayout/ScreenMapLayout'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -35,7 +43,15 @@ const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
 })
 const loggedinNavigator = StackNavigator({
   DrawerMenuNavigator: { screen: DrawerMenuNavigator },
-  ScreenDetailProject: { screen: ScreenDetailProject }
+  ScreenDetailProject: { screen: ScreenDetailProject },
+  ScreenDetailCluster: { screen: ScreenDetailCluster },
+  ScreenListClusters: { screen: ScreenListClusters },
+  ScreenListUnits: { screen: ScreenListUnits },
+  ScreenBooking: { screen: ScreenBooking },
+  ScreenListPaymentPlan: { screen: ScreenListPaymentPlan },
+  ScreenDetailPaymentPlan: { screen: ScreenDetailPaymentPlan },
+  ScreenDetailBooking: { screen: ScreenDetailBooking },
+  ScreenMapLayout: { screen: ScreenMapLayout }
 }, {
   // Default config for all screens
   headerMode: 'none',

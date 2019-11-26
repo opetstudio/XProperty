@@ -28,7 +28,7 @@ class RootContainer extends Component {
     if (!ReduxPersist.active) {
       this.props.startup()
     }
-    this.props.websocketSetup({ timestamp: new Date() })
+    // this.props.websocketSetup({ timestamp: new Date() })
     this.props.appPatch({ loading: false })
   }
 

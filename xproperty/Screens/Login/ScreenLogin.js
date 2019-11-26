@@ -60,15 +60,15 @@ class ScreenLogin extends React.Component {
         <ImageBackground source={Images.backgroundXpay} style={{ width: '100%', height: '100%' }}>
           <Content>
             <View style={{ margin: 30, alignItems: 'center' }}>
-              {/* <Image
-                source={Images.logoBayar2} style={{
+              <Image
+                source={Images.logoModernLand} style={{
                   marginTop: Metrics.doubleSection,
                   height: Metrics.images.logo,
                   width: Metrics.images.logo,
                   resizeMode: 'contain'
 
                 }}
-              /> */}
+              />
             </View>
             <Form>
               <Item style={{ marginLeft: 0 }}>

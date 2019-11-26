@@ -22,35 +22,35 @@ const datas = [
     id: 1,
     name: 'All Projects',
     route: 'ScreenListProjects',
-    icon: 'phone-portrait',
+    icon: 'project-diagram',
     bg: '#C5F442'
   },
   {
     id: 2,
-    name: 'All Projects',
+    name: 'Bookmark',
     route: 'Anatomy',
-    icon: 'phone-portrait',
+    icon: 'bookmark',
     bg: '#C5F442'
   },
   {
     id: 3,
-    name: 'All Projects',
+    name: 'Download',
     route: 'Anatomy',
-    icon: 'phone-portrait',
+    icon: 'download',
     bg: '#C5F442'
   },
   {
     id: 4,
-    name: 'All Projects',
+    name: 'My Booking',
     route: 'Anatomy',
-    icon: 'phone-portrait',
+    icon: 'book',
     bg: '#C5F442'
   },
   {
     id: 5,
-    name: 'All Projects',
+    name: 'Customers',
     route: 'Anatomy',
-    icon: 'phone-portrait',
+    icon: 'users',
     bg: '#C5F442'
   }
 ]
@@ -77,8 +77,8 @@ class ScreenSidebar extends Component {
               <Thumbnail large source={drawerImage} style={{ backgroundColor: 'red' }} />
             </View>
             <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
-              <Text style={{ fontSize: 12, color: '#fff' }}>Welcome</Text>
-              <Text style={{ color: '#fff' }}>Nofrets Poai</Text>
+              <Text style={{ fontSize: 14, color: '#fff' }}>Welcome</Text>
+              <Text style={{ color: '#fff', fontSize: 24 }}>Nofrets Poai Revina Purukan</Text>
             </View>
           </ImageBackground>
           <List
@@ -92,6 +92,8 @@ class ScreenSidebar extends Component {
               >
                 <Left>
                   <Icon
+                    type='FontAwesome5'
+                    // type?: "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | "FontAwesome" | "FontAwesome5" | "Foundation" | "Ionicons" | "MaterialCommunityIcons" | "MaterialIcons" | "Octicons" | "SimpleLineIcons" | "Zocial";
                     active
                     name={data.icon}
                     style={{ color: '#777', fontSize: 26, width: 30 }}

@@ -1,7 +1,7 @@
 /**
  * @format
  */
-
+import 'react-native-gesture-handler'
 import { AppRegistry, YellowBox } from 'react-native'
 import App from './xproperty/Containers/App'
 import { name as appName } from './app.json'

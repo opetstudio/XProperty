@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ImageBackground } from 'react-native'
+import { ImageBackground, StyleSheet } from 'react-native'
 import { Container, Header, Left, Button, Icon, Body, Title, Right, Content } from 'native-base'
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Images } from '../../Themes'

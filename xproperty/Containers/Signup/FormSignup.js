@@ -10,6 +10,7 @@ import {
   Spinner,
   Label
 } from 'native-base'
+import { StyleSheet } from 'react-native'
 import SignupAction, { SignupSelectors } from './redux'
 import { Colors } from '../../Themes'
 
@@ -27,11 +28,18 @@ class FormSignup extends Component {
   render () {
     return (
       <Form>
-        <Text style={{ alignSelf: 'center', marginBottom: 10 }}>Email or Phone Number</Text>
-        <Item fixedLabel regular>
-          {/* <Label floatingLabel>Email or Phone Number</Label> */}
-          <Input style={{ textAlign: 'center' }} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
-        </Item>
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
         <Button block style={{ margin: 15 }} onPress={() => this.props.signupFormSubmit({})}>
           <Text>Submit</Text>
         </Button>
@@ -40,6 +48,20 @@ class FormSignup extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  autocompleteIos: {
+  },
+  inputTextStyle: {
+    height: 40,
+    backgroundColor: '#fff',
+    borderColor: '#cdcdcd',
+    borderWidth: 1,
+    fontSize: 15,
+    marginBottom: 10
+  },
+  fieldLabel: {}
+})
 
 const mapStateToProps = (state, ownProps) => {
 // const foo = params.get('foo'); // bar

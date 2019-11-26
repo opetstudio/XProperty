@@ -8,7 +8,8 @@ import {
   Body,
   Icon,
   Button,
-  Title
+  Title,
+  Text
 } from 'native-base'
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import { ImageBackground, View, StatusBar, Platform } from 'react-native'
@@ -43,17 +44,47 @@ class ScreenHome extends Component {
           <View style={{ height: 300 }}>
             <Carousel />
           </View>
-          <Grid style={{ minHeight: 400 }}>
-            <Col>
-              <Row style={{ backgroundColor: '#00CE9F' }} />
-              <Row style={{ backgroundColor: '#635DB7' }} />
-              <Row style={{ backgroundColor: '#00CE9F' }} />
-            </Col>
-            <Col>
-              <Row style={{ backgroundColor: '#635DB7' }} />
-              <Row style={{ backgroundColor: '#00CE9F' }} />
-              <Row style={{ backgroundColor: '#635DB7' }} />
-            </Col>
+          <Grid>
+            <Row style={{ paddingBottom: 5 }}>
+              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
+                <Icon name='logo-apple' style={{ color: '#999', fontSize: 90 }} />
+                <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                  All Projects
+                </Text>
+              </Col>
+              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
+                <Icon name='logo-apple' style={{ color: '#999', fontSize: 90 }} />
+                <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                  Bookmark
+                </Text>
+              </Col>
+              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
+                <Icon name='logo-apple' style={{ color: '#999', fontSize: 90 }} />
+                <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                  Download
+                </Text>
+              </Col>
+            </Row>
+            <Row style={{ paddingBottom: 5 }}>
+              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
+                <Icon name='logo-apple' style={{ color: '#999', fontSize: 90 }} />
+                <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                  My Booking
+                </Text>
+              </Col>
+              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, margin: 5, padding: 5 }}>
+                {/* <Icon name="logo-apple" style={{ color: "#999", fontSize: 90 }} />
+                <Text numberOfLines={1} style={{fontSize: 14}}>
+                  Customer
+                </Text> */}
+              </Col>
+              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
+                <Icon name='logo-apple' style={{ color: '#999', fontSize: 90 }} />
+                <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                Customer
+                </Text>
+              </Col>
+            </Row>
           </Grid>
         </Content>
         <Footer />
