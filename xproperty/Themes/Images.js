@@ -88,7 +88,9 @@ const images = {
   // cardBri2: require('../Images/Cards/bri2.png'),
   mandiri: require('../Images/Cards/Mandiri.png'),
   cardImage2: require('../Images/cardImage2.png'),
-  logoModernLand: require('../Images/logoModernLand.png')
+  logoModernLand: require('../Images/logoModernLand.png'),
+  human: require('../Images/human.png')
+
 }
 
 export default images

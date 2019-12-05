@@ -4,7 +4,6 @@ import { Container, Header, Left, Button, Icon, Body, Title, Right, Content, For
 import Autocomplete from './Autocomplete'
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Images } from '../../Themes'
-import FormSignup from '../../Containers/Signup/FormSignup'
 
 export default class ScreenSingup extends Component {
   constructor (props) {

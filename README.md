@@ -23,6 +23,22 @@ cd android
 ./gradlew app:assembleRelease
 ```
 
+### upload to appcenter
+
+```bash
+# ios
+appcenter codepush release-react -a opetstudio/XProperty-ios -d Staging
+# android
+appcenter codepush release-react -a opetstudio/XProperty -d Staging
+```
+
+### display keys codepush
+
+```bash
+appcenter codepush deployment list -a <ownerName>/<appName> --displayKeys
+```
+
+
 ## run ios on device
 ```bash
 react-native run-ios --device "Anvere’s iPhone"

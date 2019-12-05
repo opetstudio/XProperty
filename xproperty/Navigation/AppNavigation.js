@@ -18,6 +18,7 @@ import ScreenListPaymentPlan from '../Screens/ListPaymentPlan/ScreenListPaymentP
 import ScreenDetailPaymentPlan from '../Screens/DetailPaymentPlan/ScreenDetailPaymentPlan'
 import ScreenDetailBooking from '../Screens/DetailBooking/ScreenDetailBooking'
 import ScreenMapLayout from '../Screens/MapLayout/ScreenMapLayout'
+import ScreenPayment from '../Screens/Payment/ScreenPayment'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -51,6 +52,7 @@ const loggedinNavigator = StackNavigator({
   ScreenListPaymentPlan: { screen: ScreenListPaymentPlan },
   ScreenDetailPaymentPlan: { screen: ScreenDetailPaymentPlan },
   ScreenDetailBooking: { screen: ScreenDetailBooking },
+  ScreenPayment: { screen: ScreenPayment },
   ScreenMapLayout: { screen: ScreenMapLayout }
 }, {
   // Default config for all screens

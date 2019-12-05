@@ -63,6 +63,7 @@ const create = (baseURL = 'https://api.github.com/') => {
     getUser
   }
   apiMerged = merge(apiMerged, require('./ApiSession').create(api))
+  apiMerged = merge(apiMerged, require('../Containers/Payment/api').create(api))
   apiMerged = merge(apiMerged, {})
   return {
     ...apiMerged

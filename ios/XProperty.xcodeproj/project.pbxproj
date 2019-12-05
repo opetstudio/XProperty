@@ -130,6 +130,8 @@
 		84CE040B08AB4F238B073C63 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../xproperty/Themes/Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		87A61D7F1B204CBBA7612F94 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../xproperty/Themes/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8B6D8324E2E04466AED9E616 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		975D5464E13D4F18F1764309 /* Pods-XPropertyTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XPropertyTests.staging.xcconfig"; path = "Target Support Files/Pods-XPropertyTests/Pods-XPropertyTests.staging.xcconfig"; sourceTree = "<group>"; };
+		9A591CF39F20738BF8436D41 /* Pods-XProperty-tvOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XProperty-tvOS.staging.xcconfig"; path = "Target Support Files/Pods-XProperty-tvOS/Pods-XProperty-tvOS.staging.xcconfig"; sourceTree = "<group>"; };
 		A40CE51EEE58457197313D68 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		A9DF6FAE7BAEE37BD05108B5 /* libPods-XProperty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XProperty.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9589136CD9411185B4771A /* HelveticaNeue.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HelveticaNeue.ttf; path = ../xproperty/Themes/Fonts/HelveticaNeue.ttf; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		B3DAB5DCAEEF4218AF373B36 /* HelveticaNeueThin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HelveticaNeueThin.ttf; path = ../xproperty/Themes/Fonts/HelveticaNeueThin.ttf; sourceTree = "<group>"; };
 		B78B90260AE790247D7D17BD /* libPods-XProperty-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XProperty-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2BCB8AF6A4F79A9AF5905 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		B9BE0FC437B5895DEB1015BE /* Pods-XProperty-tvOSTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XProperty-tvOSTests.staging.xcconfig"; path = "Target Support Files/Pods-XProperty-tvOSTests/Pods-XProperty-tvOSTests.staging.xcconfig"; sourceTree = "<group>"; };
+		CC60D33C8DC2900AC44FC945 /* Pods-XProperty.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XProperty.staging.xcconfig"; path = "Target Support Files/Pods-XProperty/Pods-XProperty.staging.xcconfig"; sourceTree = "<group>"; };
 		CEA95B39EBDA94461548B1AD /* libPods-XProperty-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XProperty-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3A5107EA954B20B0466617 /* HelveticaBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HelveticaBold.ttf; path = ../xproperty/Themes/Fonts/HelveticaBold.ttf; sourceTree = "<group>"; };
 		D0A5EB96C0F1425482EEC5D4 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -247,6 +251,10 @@
 				31DC434560BFF586E89506E2 /* Pods-XProperty-tvOSTests.release.xcconfig */,
 				7CAAEAA07FA8C70692CFC31B /* Pods-XPropertyTests.debug.xcconfig */,
 				20A8B3B6E735D7B2355BE027 /* Pods-XPropertyTests.release.xcconfig */,
+				CC60D33C8DC2900AC44FC945 /* Pods-XProperty.staging.xcconfig */,
+				9A591CF39F20738BF8436D41 /* Pods-XProperty-tvOS.staging.xcconfig */,
+				B9BE0FC437B5895DEB1015BE /* Pods-XProperty-tvOSTests.staging.xcconfig */,
+				975D5464E13D4F18F1764309 /* Pods-XPropertyTests.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1159,7 +1167,7 @@
 		};
 		EED25F292389783000822C95 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCAE161B4EE1F15169E97780 /* Pods-XProperty.release.xcconfig */;
+			baseConfigurationReference = CC60D33C8DC2900AC44FC945 /* Pods-XProperty.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODEPUSH_KEY = "Cyr-CFciNB8XqHEcKBhyJO36W7B-Vp6MxiOvr";
@@ -1180,7 +1188,7 @@
 		};
 		EED25F2A2389783000822C95 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20A8B3B6E735D7B2355BE027 /* Pods-XPropertyTests.release.xcconfig */;
+			baseConfigurationReference = 975D5464E13D4F18F1764309 /* Pods-XPropertyTests.staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1201,7 +1209,7 @@
 		};
 		EED25F2B2389783000822C95 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FE507E5B18B917564CFF91C /* Pods-XProperty-tvOS.release.xcconfig */;
+			baseConfigurationReference = 9A591CF39F20738BF8436D41 /* Pods-XProperty-tvOS.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1229,7 +1237,7 @@
 		};
 		EED25F2C2389783000822C95 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31DC434560BFF586E89506E2 /* Pods-XProperty-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = B9BE0FC437B5895DEB1015BE /* Pods-XProperty-tvOSTests.staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

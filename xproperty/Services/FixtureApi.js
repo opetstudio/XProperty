@@ -62,5 +62,15 @@ export default {
         responseDescription: 'SUCCESS'
       }
     }
+  },
+  paymentFormSubmit: (data) => {
+    return {
+      ok: true,
+      data: {
+        responseCode: '00',
+        responseMessage: 'SUCCESS',
+        responseDescription: 'SUCCESS'
+      }
+    }
   }
 }

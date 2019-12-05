@@ -1,5 +1,5 @@
 import Moment from 'moment'
-import { merge, path } from 'ramda'
+import { merge, path, isEmpty, isNil } from 'ramda'
 import {
   AsyncStorage
 } from 'react-native'
@@ -108,4 +108,8 @@ export const getSession = async (parameter, parameterInState) => {
   console.log('getSession parameter=', parameter)
   console.log('getSession sessionValue=', sessionValue)
   return sessionValue
+}
+
+export const isEmptyOrNull = (str) => {
+  return isEmpty(str) || isNil(str)
 }
