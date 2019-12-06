@@ -132,11 +132,11 @@ class ConfirmCreditCard extends Component {
         </View>
         <Label style={styles.fieldLabel}>Amount</Label>
         <Text>Rp. 4000</Text>
-        <Button block style={{ margin: 15 }} onPress={() => this.props.paymentAuth({ amount: 5000, tokenId: tokenId })} disabled={this.props.paymentFormSubmitMSG.ir}>
-          {!this.props.paymentFormSubmitMSG.ir && <Text>Pay</Text>}
-          {this.props.paymentFormSubmitMSG.ir && <Spinner />}
+        <Button block style={{ margin: 15 }} onPress={() => this.props.paymentAuth({ amount: 5000, tokenId: tokenId })} disabled={this.props.paymentAuthMSG.ir}>
+          {!this.props.paymentAuthMSG.ir && <Text>Pay</Text>}
+          {this.props.paymentAuthMSG.ir && <Spinner />}
         </Button>
-        <Text style={{ alignSelf: 'center', color: 'red', fontSize: 12 }}>{this.props.paymentFormSubmitMSG.rd}</Text>
+        <Text style={{ alignSelf: 'center', color: 'red', fontSize: 12 }}>{this.props.paymentAuthMSG.rd}</Text>
       </Form>
     )
   }

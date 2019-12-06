@@ -21,12 +21,14 @@ import ScreenMapLayout from '../Screens/MapLayout/ScreenMapLayout'
 import ScreenPayment from '../Screens/Payment/ScreenPayment'
 import ScreenPaymentCreditCard from '../Screens/Payment/ScreenPaymentCreditCard'
 import BrowserScreen from '../Screens/Browser/BrowserScreen'
+import ScreenListBooking from '../Screens/ListBooking/ScreenListBooking'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const menuRoutes = {
   ScreenHome: { screen: ScreenHome, navigationOptions: { drawerLabel: 'Home' } },
-  ScreenListProjects: { screen: ScreenListProjects, navigationOptions: { drawerLabel: 'All Projects' } }
+  ScreenListProjects: { screen: ScreenListProjects, navigationOptions: { drawerLabel: 'All Projects' } },
+  ScreenListBooking: { screen: ScreenListBooking }
 }
 navigatorHelper.setMenuNavigationRoutes(menuRoutes)
 const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {

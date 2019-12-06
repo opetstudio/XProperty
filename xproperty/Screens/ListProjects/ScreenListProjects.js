@@ -17,6 +17,7 @@ import {
 } from 'native-base'
 import { View, StatusBar, Image, TouchableOpacity } from 'react-native'
 import { Images } from '../../Themes'
+import Footer from '../../Containers/Footer'
 
 const cardImage = Images.cardImage2
 const datas = [
@@ -82,6 +83,7 @@ class ScreenListProjects extends Component {
               </ListItem>}
           />
         </Content>
+        <Footer />
       </Container>
     )
   }

@@ -42,7 +42,7 @@ const datas = [
   {
     id: 4,
     name: 'My Booking',
-    route: 'Anatomy',
+    route: 'ScreenListBooking',
     icon: 'book',
     bg: '#C5F442'
   },
