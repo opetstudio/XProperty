@@ -6,7 +6,7 @@ import {setSession, getSession} from '../Lib/Utils'
 // More info here:  https://shift.infinite.red/shipping-persistant-reducers-7341691232b1
 const REDUX_PERSIST = {
   active: true,
-  reducerVersion: '23',
+  reducerVersion: '27',
   storeConfig: {
     key: 'primary',
     storage: AsyncStorage,

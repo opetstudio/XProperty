@@ -12,7 +12,7 @@ import ModalContent from './ModalContent'
 
 const month = ['Month', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 const years = ['Year', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032']
-class FormPayment extends Component {
+class PaymentMethodCreditCard extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -145,25 +145,26 @@ class FormPayment extends Component {
   }
 
   render () {
+    console.log('render allTokenArr===>', this.props.allTokenArr)
     // if (true) return openInAppBrowser('https://www.google.com', 'dark-content')
     if (!isEmptyOrNull(this.props.maskedCardNo)) return this.renderForm()
     // if (!isEmptyOrNull(this.props.payerAuthenticationUrl)) this.props.navigation.replace('BrowserScreen', { url: this.props.payerAuthenticationUrl })
     return (
       <View>
-        {this.props.creditCard.length > 0 && <Text style={{ fontSize: 10, marginBottom: 5 }}>Choose your Credit Card</Text>}
+        {this.props.allTokenArr.length > 0 && <Text style={{ fontSize: 10, marginBottom: 5 }}>Choose your Credit Card</Text>}
         <Card>
-          {this.props.creditCard.map(r => (
+          {this.props.allTokenArr.map(r => (
             <CardItem style={{ flexDirection: 'row' }} key={r.tokenId}>
               <View style={{ flex: 1 }}>
                 <Text style={{ fontSize: 12, color: '#cdcdcd' }}>Card Number:</Text>
-                <Text style={{}}>{r.maskedCardNo}</Text>
+                <Text style={{}}>{r.maskedCardNumber}</Text>
                 <Text style={{ fontSize: 12, color: '#cdcdcd' }}>Expiry Date:</Text>
                 <Text>{r.expMonth}/{r.expYear}</Text>
               </View>
               <View style={{ width: 80 }}>
                 {!this.props.paymentAuthMSG.ir &&
                   (
-                    <Button light iconRight small onPress={() => this.props.navigation.navigate('ScreenPaymentCreditCard', { tokenId: r.tokenId, amount: 5000 })}>
+                    <Button light iconRight small onPress={() => this.props.navigation.navigate('ScreenPaymentCreditCard', { cardHash: r.cardHash, tokenId: r.tokenId, amount: 5000 })}>
                       {/* <Button light iconRight small onPress={() => this.props.paymentAuth({ amount: 5000, tokenId: r.tokenId })}> */}
                       <Text style={{ fontSize: 10, color: 'green' }}>Pay</Text>
                       <Icon active name='arrow-forward' />
@@ -232,7 +233,8 @@ const mapStateToProps = (state, ownProps) => {
     maskedCardNo: PaymentSelectors.maskedCardNo(state.payment),
     creditCard: PaymentSelectors.creditCard(state.payment),
     modalVisible: PaymentSelectors.modalVisible(state.payment),
-    payerAuthenticationUrl: PaymentSelectors.payerAuthenticationUrl(state.payment)
+    payerAuthenticationUrl: PaymentSelectors.payerAuthenticationUrl(state.payment),
+    allTokenArr: PaymentSelectors.getAllTokenArr(state.payment) || []
   }
 }
 
@@ -247,4 +249,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withNavigation(FormPayment))
+)(withNavigation(PaymentMethodCreditCard))

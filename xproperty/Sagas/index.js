@@ -18,7 +18,7 @@ import { startup } from './StartupSagas'
 import { websocketSetup } from './WebsocketSagas'
 import { sessionLogin, sessionLogout } from './SessionSagas'
 import { signupFormSubmit } from '../Containers/Signup/sagas'
-import { paymentFormSubmit, paymentAuth } from '../Containers/Payment/sagas'
+import { paymentFormSubmit, paymentAuth, paymentCheck } from '../Containers/Payment/sagas'
 
 /* ------------- API ------------- */
 
@@ -41,6 +41,7 @@ export default function * root () {
     takeLatest(SessionTypes.SESSION_LOGOUT, sessionLogout, apiDashboard),
     takeLatest(SignupTypes.SIGNUP_FORM_SUBMIT, signupFormSubmit, apiDashboard),
     takeLatest(PaymentTypes.PAYMENT_FORM_SUBMIT, paymentFormSubmit, xenditApi),
-    takeLatest(PaymentTypes.PAYMENT_AUTH, paymentAuth, xenditApi)
+    takeLatest(PaymentTypes.PAYMENT_AUTH, paymentAuth, xenditApi),
+    takeLatest(PaymentTypes.PAYMENT_CHECK, paymentCheck, xenditApi)
   ])
 }

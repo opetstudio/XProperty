@@ -58,5 +58,5 @@ class App extends Component {
   }
 }
 const MyApp = codePush(codePushOptions)(App)
-// export default App
-export default MyApp
+export default App
+// export default MyApp

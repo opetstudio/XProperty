@@ -14,7 +14,7 @@ import {
 } from 'native-base'
 import { View } from 'react-native'
 import { Grid, Row, Col } from 'react-native-easy-grid'
-import FormPayment from './FormPayment'
+import PaymentMethodCreditCard from './PaymentMethodCreditCard'
 
 const dataArray = [
   {
@@ -45,7 +45,7 @@ class ScreenListPaymentPlan extends Component {
         expanded={0}
         renderContent={(d) => (
           <View style={{ padding: 10 }}>
-            {d.id === 1 && <FormPayment />}
+            {d.id === 1 && <PaymentMethodCreditCard />}
           </View>
         )}
       />
