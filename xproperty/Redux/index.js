@@ -12,7 +12,8 @@ export const reducers = combineReducers({
   app: require('./AppRedux').reducer,
   popup: require('./PopupRedux').reducer,
   signup: require('../Containers/Signup/redux').reducer,
-  payment: require('../Containers/Payment/redux').reducer
+  payment: require('../Containers/Payment/redux').reducer,
+  project: require('../Containers/Project/redux').reducer
 })
 
 export default () => {

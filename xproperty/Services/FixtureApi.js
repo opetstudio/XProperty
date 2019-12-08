@@ -72,5 +72,32 @@ export default {
         responseDescription: 'SUCCESS'
       }
     }
+  },
+  projectFetchAll: (data) => {
+    return {
+      ok: true,
+      data: {
+        responseCode: '00',
+        responseMessage: 'SUCCESS',
+        responseDescription: 'SUCCESS',
+        rows: [
+          { id: 1, title: 'Project 1', location: 'Menteng, Jakarta Selatan', picture: 'http://www.newproject1u.com/images/uploads/news/NP1U_oc-resources-set-to-launch-its-first-property-project.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+          { id: 2, title: 'Project 2', location: 'Menteng, Jakarta Selatan', picture: 'http://www.newproject1u.com/images/uploads/news/NP1U_oc-resources-set-to-launch-its-first-property-project.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+          { id: 3, title: 'Project 3', location: 'Menteng, Jakarta Selatan', picture: 'http://www.newproject1u.com/images/uploads/news/NP1U_oc-resources-set-to-launch-its-first-property-project.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+          { id: 4, title: 'Project 4', location: 'Menteng, Jakarta Selatan', picture: 'http://www.newproject1u.com/images/uploads/news/NP1U_oc-resources-set-to-launch-its-first-property-project.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
+        ]
+      }
+    }
+  },
+  projectFetchOne: (data) => {
+    return {
+      ok: true,
+      data: {
+        responseCode: '00',
+        responseMessage: 'SUCCESS',
+        responseDescription: 'SUCCESS',
+        row: { id: 1, title: 'Project 1 Nofrets', location: 'Menteng, Jakarta Selatannnn', picture: 'http://www.newproject1u.com/images/uploads/news/NP1U_oc-resources-set-to-launch-its-first-property-project.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
+      }
+    }
   }
 }
