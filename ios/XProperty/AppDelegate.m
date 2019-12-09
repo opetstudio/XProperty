@@ -16,6 +16,7 @@
 #import <AppCenterReactNativeAnalytics.h>
 #import <AppCenterReactNativeCrashes.h>
 #import <CodePush/CodePush.h>
+@import Firebase;
 
 
 @implementation AppDelegate
@@ -38,6 +39,10 @@
   [AppCenterReactNative register];
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+  
   return YES;
 }
 

@@ -45,29 +45,29 @@ class ScreenHome extends Component {
             <Carousel />
           </View>
           <Grid>
-            <Row style={{ paddingBottom: 5 }}>
+            <Row style={{ paddingBottom: 5, height: 130 }}>
               <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon type='FontAwesome5' name='project-diagram' style={{ color: '#999', fontSize: 90 }} />
+                <Icon type='FontAwesome5' name='project-diagram' style={{ color: '#999', fontSize: 70 }} />
                 <Text numberOfLines={1} style={{ fontSize: 14 }}>
                   All Projects
                 </Text>
               </Col>
               <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon name='bookmark' style={{ color: '#999', fontSize: 90 }} />
+                <Icon type='FontAwesome5' name='bookmark' style={{ color: '#999', fontSize: 70 }} />
                 <Text numberOfLines={1} style={{ fontSize: 14 }}>
                   Bookmark
                 </Text>
               </Col>
               <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon name='download' style={{ color: '#999', fontSize: 90 }} />
+                <Icon type='FontAwesome5' name='download' style={{ color: '#999', fontSize: 70 }} />
                 <Text numberOfLines={1} style={{ fontSize: 14 }}>
                   Download
                 </Text>
               </Col>
             </Row>
-            <Row style={{ paddingBottom: 5 }}>
+            <Row style={{ paddingBottom: 5, height: 130 }}>
               <Col onPress={() => this.props.navigation.navigate('ScreenListBooking')} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon name='book' style={{ color: '#999', fontSize: 90 }} />
+                <Icon type='FontAwesome5' name='book' style={{ color: '#999', fontSize: 70 }} />
                 <Text numberOfLines={1} style={{ fontSize: 14 }}>
                   My Booking
                 </Text>
@@ -79,7 +79,7 @@ class ScreenHome extends Component {
                 </Text> */}
               </Col>
               <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon name='users' type='FontAwesome5' style={{ color: '#999', fontSize: 90 }} />
+                <Icon name='users' type='FontAwesome5' style={{ color: '#999', fontSize: 70 }} />
                 <Text numberOfLines={1} style={{ fontSize: 14 }}>
                 Customer
                 </Text>
