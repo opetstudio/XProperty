@@ -30,16 +30,16 @@ class FormSignup extends Component {
       <Form>
         <Text style={{}}>Full Name</Text>
         <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
-        <Text style={{}}>Full Name</Text>
+        <Text style={{}}>Email</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Address</Text>
+        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        {/* <Text style={{}}>Full Name</Text>
         <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
         <Text style={{}}>Full Name</Text>
         <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
-        <Text style={{}}>Full Name</Text>
-        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
-        <Text style={{}}>Full Name</Text>
-        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
-        <Text style={{}}>Full Name</Text>
-        <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' />
+        <Text style={{}}>Full Name</Text> */}
+        {/* <Input style={styles.inputTextStyle} placeholder='ex. 123456' placeholderTextColor='#d3d3d3' /> */}
         <Button block style={{ margin: 15 }} onPress={() => this.props.signupFormSubmit({})}>
           <Text>Submit</Text>
         </Button>

@@ -96,7 +96,7 @@ class ScreenSidebar extends Component {
                     // type?: "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | "FontAwesome" | "FontAwesome5" | "Foundation" | "Ionicons" | "MaterialCommunityIcons" | "MaterialIcons" | "Octicons" | "SimpleLineIcons" | "Zocial";
                     active
                     name={data.icon}
-                    style={{ color: '#777', fontSize: 26, width: 30 }}
+                    style={{ color: '#000', fontSize: 26, width: 30 }}
                   />
                   <Text style={styles.text}>
                     {data.name}

@@ -12,15 +12,24 @@ import {
   Text
 } from 'native-base'
 import { Grid, Row, Col } from 'react-native-easy-grid'
-import { ImageBackground, View, StatusBar, Platform } from 'react-native'
+import { ImageBackground, View, StatusBar, Platform, Image } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 import Carousel from '../../Components/Carousel'
 import Footer from '../../Containers/Footer'
 import { Images } from '../../Themes'
 
 class ScreenHome extends Component {
+  renderBottom () {
+    return (
+      <View style={{ width: 200, height: 100 }}>
+        <Image source={Images.homeBackground} style={{ height: 100, width: '100%' }} resizeMode='stretch' />
+      </View>)
+  }
+
   render () {
     return (
       <Container style={{ backgroundColor: '#fff' }}>
+
         <Header>
           {Platform.OS === 'android' && <StatusBar barStyle='light-content' />}
           <Left>
@@ -35,7 +44,7 @@ class ScreenHome extends Component {
             <Title>Home</Title>
           </Body>
           <Right>
-            <Button transparent>
+            <Button onPress={() => this.props.navigation.navigate('ScreenListUnits')} transparent>
               <Icon name='search' />
             </Button>
           </Right>
@@ -46,47 +55,67 @@ class ScreenHome extends Component {
           </View>
           <Grid>
             <Row style={{ paddingBottom: 5, height: 130 }}>
-              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon type='FontAwesome5' name='project-diagram' style={{ color: '#999', fontSize: 70 }} />
-                <Text numberOfLines={1} style={{ fontSize: 14 }}>
-                  All Projects
-                </Text>
+              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon type='FontAwesome5' name='project-diagram' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14, color: '#000' }}>
+                          All Projects
+                  </Text>
+                </LinearGradient>
               </Col>
-              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon type='FontAwesome5' name='bookmark' style={{ color: '#999', fontSize: 70 }} />
-                <Text numberOfLines={1} style={{ fontSize: 14 }}>
-                  Bookmark
-                </Text>
+              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon type='FontAwesome5' name='bookmark' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14, color: '#000' }}>
+                          Bookmark
+                  </Text>
+                </LinearGradient>
               </Col>
-              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon type='FontAwesome5' name='download' style={{ color: '#999', fontSize: 70 }} />
-                <Text numberOfLines={1} style={{ fontSize: 14 }}>
-                  Download
-                </Text>
+              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon type='FontAwesome5' name='download' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14, color: '#000' }}>
+                          Download
+                  </Text>
+                </LinearGradient>
               </Col>
             </Row>
             <Row style={{ paddingBottom: 5, height: 130 }}>
-              <Col onPress={() => this.props.navigation.navigate('ScreenListBooking')} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon type='FontAwesome5' name='book' style={{ color: '#999', fontSize: 70 }} />
-                <Text numberOfLines={1} style={{ fontSize: 14 }}>
-                  My Booking
-                </Text>
+              <Col onPress={() => this.props.navigation.navigate('ScreenListBooking')} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon type='FontAwesome5' name='book' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                          My Booking
+                  </Text>
+                </LinearGradient>
               </Col>
-              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, margin: 5, padding: 5 }}>
+              <Col onPress={() => {}} style={{ margin: 5 }}>
                 {/* <Icon name="logo-apple" style={{ color: "#999", fontSize: 90 }} />
-                <Text numberOfLines={1} style={{fontSize: 14}}>
-                  Customer
-                </Text> */}
+                      <Text numberOfLines={1} style={{fontSize: 14}}>
+                        Customer
+                      </Text> */}
               </Col>
-              <Col onPress={() => {}} style={{ alignItems: 'center', paddingHorizontal: 3, backgroundColor: '#cdcdcd', margin: 5, padding: 5 }}>
-                <Icon name='users' type='FontAwesome5' style={{ color: '#999', fontSize: 70 }} />
-                <Text numberOfLines={1} style={{ fontSize: 14 }}>
-                Customer
-                </Text>
+              <Col onPress={() => {}} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon name='users' type='FontAwesome5' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                        Customer
+                  </Text>
+                </LinearGradient>
               </Col>
             </Row>
           </Grid>
         </Content>
+        <LinearGradient colors={['#fff', '#141e30']} style={{position: 'absolute', bottom: 60, height: 350, width: '200%', zIndex: -1, flexDirection: 'column-reverse' }}>
+          <View style={{ flexDirection: 'row', height: 80 }}>
+            {this.renderBottom()}
+            {this.renderBottom()}
+            {this.renderBottom()}
+            {this.renderBottom()}
+            {this.renderBottom()}
+          </View>
+        </LinearGradient>
+
         <Footer />
       </Container>
     )

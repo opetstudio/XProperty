@@ -27,7 +27,7 @@ export default class ScreenSingup extends Component {
   render () {
     return (
       <Container>
-        <ImageBackground source={Images.backgroundXpay} style={{width: '100%', height: '100%' }}>
+        <ImageBackground source={Images.backgroundXpay} style={{ width: '100%', height: '100%' }}>
           <Header>
             <Left>
               <Button transparent onPress={() => this.props.navigation.goBack()}>

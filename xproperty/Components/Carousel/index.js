@@ -75,17 +75,17 @@ class CardSwipe extends Component {
       <ViewPager style={styles.wrapper} showPageIndicator>
         <View key='1' style={styles.slide}>
           <View style={styles.imgWrap}>
-            <Image source={Images.defaultImageBanner} style={styles.img} />
+            <Image source={{ uri: 'https://www.modernland.co.id/uploads/default/files/067a2fc4df55d90f2180651d02e9f859.jpg' }} style={styles.img} />
           </View>
         </View>
         <View key='2' style={styles.slide}>
           <View style={styles.imgWrap}>
-            <Image source={Images.defaultImageBanner} style={styles.img} />
+            <Image source={{ uri: 'https://www.modernland.co.id/uploads/default/files/a5112ac3d5215f9c25c69f721c8ae837.jpg' }} style={styles.img} />
           </View>
         </View>
         <View key='3' style={styles.slide}>
           <View style={styles.imgWrap}>
-            <Image source={Images.defaultImageBanner} style={styles.img} />
+            <Image source={{ uri: 'https://www.modernland.co.id/addons/shared_addons/themes/modernland/img/about_banner.jpg' }} style={styles.img} />
           </View>
         </View>
       </ViewPager>
