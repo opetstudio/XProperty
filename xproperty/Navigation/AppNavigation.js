@@ -23,6 +23,8 @@ import ScreenPaymentCreditCard from '../Screens/Payment/ScreenPaymentCreditCard'
 import BrowserScreen from '../Screens/Browser/BrowserScreen'
 import ScreenListBooking from '../Screens/ListBooking/ScreenListBooking'
 import ScreenScanner from '../Screens/Scanner/ScreenScanner'
+import ScreenSearchProperty from '../Screens/SearchProperty/ScreenSearchProperty'
+import ScreenResultSearchProperty from '../Screens/ResultSearchProperty/ScreenResultSearchProperty'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -47,6 +49,7 @@ const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
   contentComponent: props => <ScreenSidebar {...props} />
   // contentComponent: props => <Drawer {...props} />
 })
+
 const loggedinNavigator = StackNavigator({
   DrawerMenuNavigator: { screen: DrawerMenuNavigator },
   ScreenDetailProject: { screen: ScreenDetailProject },
@@ -61,7 +64,9 @@ const loggedinNavigator = StackNavigator({
   BrowserScreen: { screen: BrowserScreen },
   ScreenPaymentCreditCard: { screen: ScreenPaymentCreditCard },
   ScreenScanner: { screen: ScreenScanner },
-  ScreenMapLayout: { screen: ScreenMapLayout }
+  ScreenMapLayout: { screen: ScreenMapLayout },
+  ScreenSearchProperty: { screen: ScreenSearchProperty },
+  ScreenResultSearchProperty: { screen: ScreenResultSearchProperty }
 }, {
   // Default config for all screens
   headerMode: 'none',

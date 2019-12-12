@@ -14,7 +14,8 @@ export const reducers = combineReducers({
   signup: require('../Containers/Signup/redux').reducer,
   payment: require('../Containers/Payment/redux').reducer,
   project: require('../Containers/Project/redux').reducer,
-  booking: require('../Containers/Booking/redux').reducer
+  booking: require('../Containers/Booking/redux').reducer,
+  search: require('../Containers/Search/redux').reducer
 })
 
 export default () => {

@@ -44,7 +44,7 @@ class ScreenHome extends Component {
             <Title>Home</Title>
           </Body>
           <Right>
-            <Button onPress={() => this.props.navigation.navigate('ScreenListUnits')} transparent>
+            <Button onPress={() => this.props.navigation.navigate('ScreenSearchProperty')} transparent>
               <Icon name='search' />
             </Button>
           </Right>
@@ -53,7 +53,7 @@ class ScreenHome extends Component {
           <View style={{ height: 300 }}>
             <Carousel />
           </View>
-          <Grid>
+          <Grid style={{marginBottom: 10}}>
             <Row style={{ paddingBottom: 5, height: 130 }}>
               <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ margin: 5 }}>
                 <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
