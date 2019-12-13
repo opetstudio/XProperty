@@ -11,6 +11,7 @@ import { WebsocketTypes } from '../Redux/WebsocketRedux'
 import { SessionTypes } from '../Redux/SessionRedux'
 import { SignupTypes } from '../Containers/Signup/redux'
 import { PaymentTypes } from '../Containers/Payment/redux'
+import { ProjectTypes } from '../Containers/Project/redux'
 
 /* ------------- Sagas ------------- */
 
@@ -18,7 +19,8 @@ import { startup } from './StartupSagas'
 import { websocketSetup } from './WebsocketSagas'
 import { sessionLogin, sessionLogout } from './SessionSagas'
 import { signupFormSubmit } from '../Containers/Signup/sagas'
-import { paymentFormSubmit, paymentAuth } from '../Containers/Payment/sagas'
+import { paymentFormSubmit, paymentAuth, paymentCheck } from '../Containers/Payment/sagas'
+import { projectFetchAll, projectFetchOne } from '../Containers/Project/sagas'
 
 /* ------------- API ------------- */
 
@@ -41,6 +43,9 @@ export default function * root () {
     takeLatest(SessionTypes.SESSION_LOGOUT, sessionLogout, apiDashboard),
     takeLatest(SignupTypes.SIGNUP_FORM_SUBMIT, signupFormSubmit, apiDashboard),
     takeLatest(PaymentTypes.PAYMENT_FORM_SUBMIT, paymentFormSubmit, xenditApi),
-    takeLatest(PaymentTypes.PAYMENT_AUTH, paymentAuth, xenditApi)
+    takeLatest(PaymentTypes.PAYMENT_AUTH, paymentAuth, xenditApi),
+    takeLatest(PaymentTypes.PAYMENT_CHECK, paymentCheck, xenditApi),
+    takeLatest(ProjectTypes.PROJECT_FETCH_ONE, projectFetchOne, apiDashboard),
+    takeLatest(ProjectTypes.PROJECT_FETCH_ALL, projectFetchAll, apiDashboard)
   ])
 }

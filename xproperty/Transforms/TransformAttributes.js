@@ -144,6 +144,19 @@ function insertMulti (singleIn, multiIn) {
   return newList(multiIn)
 }
 
+function transResponse (dataIn) {
+  const resp = dataIn
+  const rows = path(['data', 'rows'], resp)
+  const rowsById = _.keyBy(rows, 'id')
+  resp.data = { ...resp.data, responseCode: '00', responseMessage: 'success', responseDescription: 'success', rowsById }
+  return resp
+}
+function transResponseGetDetail (dataIn) {
+  const resp = dataIn
+  resp.data = { ...resp.data, responseCode: '00', responseMessage: 'success', responseDescription: 'success' }
+  return resp
+}
+
 export {
   getAttributes,
   mapAttributes,
@@ -151,5 +164,7 @@ export {
   insertMulti,
   getEntity,
   getEntityCollection,
-  getEntityBatch
+  getEntityBatch,
+  transResponse,
+  transResponseGetDetail
 }

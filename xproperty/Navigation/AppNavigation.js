@@ -19,12 +19,19 @@ import ScreenDetailPaymentPlan from '../Screens/DetailPaymentPlan/ScreenDetailPa
 import ScreenDetailBooking from '../Screens/DetailBooking/ScreenDetailBooking'
 import ScreenMapLayout from '../Screens/MapLayout/ScreenMapLayout'
 import ScreenPayment from '../Screens/Payment/ScreenPayment'
+import ScreenPaymentCreditCard from '../Screens/Payment/ScreenPaymentCreditCard'
+import BrowserScreen from '../Screens/Browser/BrowserScreen'
+import ScreenListBooking from '../Screens/ListBooking/ScreenListBooking'
+import ScreenScanner from '../Screens/Scanner/ScreenScanner'
+import ScreenSearchProperty from '../Screens/SearchProperty/ScreenSearchProperty'
+import ScreenResultSearchProperty from '../Screens/ResultSearchProperty/ScreenResultSearchProperty'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const menuRoutes = {
   ScreenHome: { screen: ScreenHome, navigationOptions: { drawerLabel: 'Home' } },
-  ScreenListProjects: { screen: ScreenListProjects, navigationOptions: { drawerLabel: 'All Projects' } }
+  ScreenListProjects: { screen: ScreenListProjects, navigationOptions: { drawerLabel: 'All Projects' } },
+  ScreenListBooking: { screen: ScreenListBooking }
 }
 navigatorHelper.setMenuNavigationRoutes(menuRoutes)
 const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
@@ -42,6 +49,7 @@ const DrawerMenuNavigator = DrawerNavigator(menuRoutes, {
   contentComponent: props => <ScreenSidebar {...props} />
   // contentComponent: props => <Drawer {...props} />
 })
+
 const loggedinNavigator = StackNavigator({
   DrawerMenuNavigator: { screen: DrawerMenuNavigator },
   ScreenDetailProject: { screen: ScreenDetailProject },
@@ -53,7 +61,12 @@ const loggedinNavigator = StackNavigator({
   ScreenDetailPaymentPlan: { screen: ScreenDetailPaymentPlan },
   ScreenDetailBooking: { screen: ScreenDetailBooking },
   ScreenPayment: { screen: ScreenPayment },
-  ScreenMapLayout: { screen: ScreenMapLayout }
+  BrowserScreen: { screen: BrowserScreen },
+  ScreenPaymentCreditCard: { screen: ScreenPaymentCreditCard },
+  ScreenScanner: { screen: ScreenScanner },
+  ScreenMapLayout: { screen: ScreenMapLayout },
+  ScreenSearchProperty: { screen: ScreenSearchProperty },
+  ScreenResultSearchProperty: { screen: ScreenResultSearchProperty }
 }, {
   // Default config for all screens
   headerMode: 'none',

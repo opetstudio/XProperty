@@ -81,7 +81,7 @@ class FooterComponent extends Component {
         <FooterTab>
           <Button
             // active={this.state.tab1}
-            onPress={() => {}}
+            onPress={() => this.props.navigation.navigate('ScreenHome')}
           >
             {/* <Badge>
               <Text>2</Text>
@@ -92,7 +92,7 @@ class FooterComponent extends Component {
           </Button>
           <Button
             active={this.state.tab2}
-            onPress={() => {}}
+            onPress={() => this.props.navigation.navigate('ScreenListBooking')}
           >
             <Icon active={this.state.tab2} name='book' />
             {/* <Image source={Images.scan} style={{ height: 35, resizeMode: 'contain' }} /> */}

@@ -89,7 +89,9 @@ const images = {
   mandiri: require('../Images/Cards/Mandiri.png'),
   cardImage2: require('../Images/cardImage2.png'),
   logoModernLand: require('../Images/logoModernLand.png'),
-  human: require('../Images/human.png')
+  human: require('../Images/human.png'),
+  homeBackground: require('../Images/homeBackground.png'),
+  clusterMapLayout: require('../Images/clusterMapLayout.png')
 
 }
 

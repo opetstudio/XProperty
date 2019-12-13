@@ -11,22 +11,23 @@ export default class ScreenPayment extends Component {
   render () {
     return (
       <Container>
-        <ImageBackground source={Images.backgroundXpay} style={{ width: '100%', height: '100%' }}>
-          <Header>
-            <Left>
-              <Button transparent onPress={() => this.props.navigation.goBack()}>
-                <Icon name='arrow-back' />
-              </Button>
-            </Left>
-            <Body>
-              <Title>Payment</Title>
-            </Body>
-            <Right />
-          </Header>
-          <Content padder>
-            <PaymentMethod />
-          </Content>
-        </ImageBackground>
+        {/* <ImageBackground source={Images.backgroundXpay} style={{ width: '100%', height: '100%' }}> */}
+        <Header>
+          <Left>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Icon name='arrow-back' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Payment</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
+          <Text style={{ marginBottom: 10 }}>Payment Method:</Text>
+          <PaymentMethod />
+        </Content>
+        {/* </ImageBackground> */}
       </Container>
     )
   }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { ImageBackground, StyleSheet, View, Platform, Alert, Modal } from 'react-native'
+import { withNavigation } from 'react-navigation'
+import { ImageBackground, StyleSheet, View, Platform, Alert, Modal, StatusBar, Linking } from 'react-native'
 import { Container, Header, Left, Button, Icon, Body, Title, Right, Content, Form, Text, Item, Input, Label, Textarea, DatePicker, Picker, Spinner, Card, CardItem } from 'native-base'
+import InAppBrowser from 'react-native-inappbrowser-reborn'
 import PaymentAction, { PaymentSelectors } from './redux'
 import { Colors } from '../../Themes'
 import PickerField from './PickerField'
-import { isEmptyOrNull } from '../../Lib/Utils'
+import { isEmptyOrNull, openInAppBrowser, tryDeepLinking } from '../../Lib/Utils'
 import ModalContent from './ModalContent'
 
 const month = ['Month', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
@@ -22,9 +24,13 @@ class FormPayment extends Component {
       },
       formSent: false,
       isSubmited: false,
-      modalVisible: false
+      modalVisible: false,
+      url: 'https://www.google.com',
+      statusBarStyle: 'dark-content',
+      openBrowser: false
     }
     this.setModalVisible = this.setModalVisible.bind(this)
+    this.renderPayerAuthenticationUrl = this.renderPayerAuthenticationUrl.bind(this)
   }
 
   handleChangeExpiryMonth (val) {
@@ -50,14 +56,25 @@ class FormPayment extends Component {
   }
 
   componentWillMount () {
-    this.props.paymentPatch({ paymentFormSubmitMSG: { ir: false, rc: '', rs: '', rd: '' } })
+    this.props.paymentPatch({ payerAuthenticationUrl: '', paymentFormSubmitMSG: { ir: false, rc: '', rs: '', rd: '' } })
+    this.setModalVisible(!this.props.modalVisible)
+    console.log('componentWillMount========== check status payment')
   }
 
-  // componentDidUpdate (prevProps) {
-  //   if (!this.props.paymentFormSubmitMSG.ir && this.props.paymentFormSubmitMSG.rc === '00') {
-  //     this.props.onSuccessSubmit()
-  //   }
-  // }
+  componentDidUpdate (prevProps) {
+    if (prevProps.payerAuthenticationUrl !== this.props.payerAuthenticationUrl && !isEmptyOrNull(this.props.payerAuthenticationUrl)) {
+      // tryDeepLinking(() => {
+      //   alert('cek')
+      // })
+      openInAppBrowser(this.props.payerAuthenticationUrl, 'dark-content', () => {
+        // alert('cek')
+        console.log('openInAppBrowser callback========== check status payment')
+      })
+    }
+    // if (!this.props.paymentFormSubmitMSG.ir && this.props.paymentFormSubmitMSG.rc === '00') {
+    //   this.props.onSuccessSubmit()
+    // }
+  }
 
   renderForm () {
     return (
@@ -117,10 +134,23 @@ class FormPayment extends Component {
     )
   }
 
+  renderPayerAuthenticationUrl () {
+    return (
+      <ModalContent
+        setModalVisible={this.setModalVisible}
+        modalVisible={this.props.modalVisible}
+        payerAuthenticationUrl={this.props.payerAuthenticationUrl}
+      />
+    )
+  }
+
   render () {
+    // if (true) return openInAppBrowser('https://www.google.com', 'dark-content')
     if (!isEmptyOrNull(this.props.maskedCardNo)) return this.renderForm()
+    // if (!isEmptyOrNull(this.props.payerAuthenticationUrl)) this.props.navigation.replace('BrowserScreen', { url: this.props.payerAuthenticationUrl })
     return (
       <View>
+        {this.props.creditCard.length > 0 && <Text style={{ fontSize: 10, marginBottom: 5 }}>Choose your Credit Card</Text>}
         <Card>
           {this.props.creditCard.map(r => (
             <CardItem style={{ flexDirection: 'row' }} key={r.tokenId}>
@@ -131,19 +161,24 @@ class FormPayment extends Component {
                 <Text>{r.expMonth}/{r.expYear}</Text>
               </View>
               <View style={{ width: 80 }}>
-                <Button light iconRight small onPress={() => this.props.paymentAuth({ amount: 5000, tokenId: r.tokenId })}>
-                  <Text style={{ fontSize: 10, color: 'green' }}>Pay</Text>
-                  <Icon active name='arrow-forward' />
-                </Button>
+                {!this.props.paymentAuthMSG.ir &&
+                  (
+                    <Button light iconRight small onPress={() => this.props.navigation.navigate('ScreenPaymentCreditCard', { tokenId: r.tokenId, amount: 5000 })}>
+                      {/* <Button light iconRight small onPress={() => this.props.paymentAuth({ amount: 5000, tokenId: r.tokenId })}> */}
+                      <Text style={{ fontSize: 10, color: 'green' }}>Pay</Text>
+                      <Icon active name='arrow-forward' />
+                    </Button>
+                  )}
+                {this.props.paymentAuthMSG.ir && <Spinner color='green' />}
                 {/* <Icon name='arrow-forward' /> */}
               </View>
             </CardItem>
           ))}
         </Card>
-        <Button block style={{ margin: 15 }} onPress={() => Alert.alert('Goto Screen Add new Visa/Master Card')}>
-          <Text>Add New Card</Text>
+        <Button block style={{ margin: 15 }} onPress={() => this.props.navigation.navigate('ScreenPaymentCreditCard', {})}>
+          <Text>Pay with New Card</Text>
         </Button>
-        <Modal
+        {/* <Modal
           animationType='slide'
           transparent
           visible={this.props.modalVisible}
@@ -153,14 +188,12 @@ class FormPayment extends Component {
           }}
           closeOnClick
         >
-          {/* <TouchableHighlight style={{backgroundColor: 'red', height: '100%'}} onPress={() => Alert.alert('cek')}> */}
           <ModalContent
             setModalVisible={this.setModalVisible}
             modalVisible={this.props.modalVisible}
             payerAuthenticationUrl={this.props.payerAuthenticationUrl}
           />
-          {/* </TouchableHighlight> */}
-        </Modal>
+        </Modal> */}
       </View>
     )
   }
@@ -195,6 +228,7 @@ const mapStateToProps = (state, ownProps) => {
 // const foo = params.get('foo'); // bar
   return {
     paymentFormSubmitMSG: PaymentSelectors.paymentFormSubmitMSG(state.payment),
+    paymentAuthMSG: PaymentSelectors.paymentAuthMSG(state.payment),
     maskedCardNo: PaymentSelectors.maskedCardNo(state.payment),
     creditCard: PaymentSelectors.creditCard(state.payment),
     modalVisible: PaymentSelectors.modalVisible(state.payment),
@@ -213,4 +247,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormPayment)
+)(withNavigation(FormPayment))

@@ -73,8 +73,8 @@ export default class AComplete extends Component {
           listContainerStyle={{}}
           inputContainerStyle={{ borderWidth: 0 }}
           data={films.length === 1 && comp(query, films[0].title) ? [] : films}
-          defaultValue={query}
-          onChangeText={text => this.setState({ query: text })}
+          defaultValue={this.props.defaultValue}
+          onChangeText={text => this.props.onChangeText(text)}
           placeholder={this.props.placeholder}
           renderTextInput={(props) => {
             return (

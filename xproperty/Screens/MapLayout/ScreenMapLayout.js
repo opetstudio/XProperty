@@ -21,7 +21,8 @@ import ImageMapper from 'react-native-image-mapper'
 import { Images } from '../../Themes'
 import { RECTANGLE_MAP } from './Maps'
 
-const HumanImg = Images.human
+const HumanImg = Images.clusterMapLayout
+// const HumanImg = Images.human
 
 export default class ScreenMapLayout extends Component {
   constructor (props) {
@@ -55,6 +56,7 @@ export default class ScreenMapLayout extends Component {
         this.setState({ selectedAreaId: item.id })
       }
     }
+    Alert.alert('Click Unit')
   }
 
   render () {

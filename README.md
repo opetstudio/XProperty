@@ -41,7 +41,7 @@ appcenter codepush deployment list -a <ownerName>/<appName> --displayKeys
 
 ## run ios on device
 ```bash
-react-native run-ios --device "Anvere’s iPhone"
+npx react-native run-ios --device "Anvere’s iPhone"
 ```
 
 ## Install Plugin

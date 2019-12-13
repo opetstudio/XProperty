@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Root } from 'native-base'
 import { connect } from 'react-redux'
+import InAppBrowser from 'react-native-inappbrowser-reborn'
 // import SplashScreen from 'react-native-splash-screen'
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'

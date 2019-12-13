@@ -8,11 +8,18 @@ export const create = api => ({
   paymentFormSubmit: (data, opt) => {
     api.setHeader('Authorization', 'Basic ' + publicapiKeyB64)
     const body = { is_single_use: false, card_data: { account_number: data.cardNo, exp_month: data.expMonth, exp_year: data.expYear }, should_authenticate: true, amount: data.amount }
-    const resp = api.post(`/credit_card_tokens/${opt.tokenId}/authentications`, body)
+    console.log('paymentFormSubmit body=', body)
+    const resp = api.post('/v2/credit_card_tokens', body)
     // const resp = api.post('/v2/credit_card_tokens', body)
     return resp
   },
   paymentAuth: (data, opt) => {
+    api.setHeader('Authorization', 'Basic ' + publicapiKeyB64)
+    const body = { amount: data.amount }
+    const resp = api.post('/credit_card_tokens/' + data.tokenId + '/authentications', body)
+    return resp
+  },
+  paymentCheck: (data, opt) => {
     api.setHeader('Authorization', 'Basic ' + publicapiKeyB64)
     const body = { amount: data.amount }
     const resp = api.post('/credit_card_tokens/' + data.tokenId + '/authentications', body)
