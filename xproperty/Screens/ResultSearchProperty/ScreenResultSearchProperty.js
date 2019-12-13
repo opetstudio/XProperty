@@ -19,9 +19,10 @@ import {
   ActionSheet
 } from 'native-base'
 import {
-  ScrollView, Modal, TouchableHighlight, TouchableOpacity, View, Alert
+  ScrollView, Modal, TouchableHighlight, TouchableOpacity, View, Alert, StatusBar, Platform
 } from 'react-native'
 import SearchBar from '../../Components/SearchBar'
+import FilterFormModal from '../../Containers/Search/FilterFormModal'
 
 import styles from './styles'
 
@@ -49,23 +50,35 @@ class ScreenResultSearchProperty extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      searchString: ''
     }
     this.setModalVisible = this.setModalVisible.bind(this)
+    this.refresh = this.refresh.bind(this)
   }
+
   // state = {
   //   modalVisible: false
   // }
+  componentDidMount () {
+    console.log('componentDidMount -=======')
+    const searchString = path(['navigation', 'state', 'params', 'searchString'], this.props)
+    if (searchString) this.refresh(searchString)
+  }
+
+  refresh (searchString) {
+    this.setState({ searchString })
+  }
 
   setModalVisible (visible) {
     this.setState({ modalVisible: visible })
   }
 
   renderResult () {
-    const searchString = path(['navigation', 'state', 'params', 'searchString'], this.props)
     return (
       <Container style={styles.container}>
         <Header style={{ backgroundColor: '#fff' }}>
+          {Platform.OS === 'android' && <StatusBar barStyle='light-content' />}
           <View style={{ flexDirection: 'row', width: '100%', height: '100%', alignContent: 'center', justifyContent: 'center' }}>
             <View style={{ justifyContent: 'center' }}>
               <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ marginRight: 0, height: '100%', width: 40, justifyContent: 'center', alignItems: 'center' }}>
@@ -74,18 +87,18 @@ class ScreenResultSearchProperty extends Component {
             </View>
             <View style={{ flex: 1, height: '100%', justifyContent: 'center' }}>
               <SearchBar
-                search={searchString} onChangeText={() => {}} style={{ height: 40 }} onSubmitEditing={() => {}} autoFocus={false} onFocus={() => this.props.navigation.navigate('ScreenSearchProperty', { searchString })}
+                search={this.state.searchString} onChangeText={() => {}} style={{ height: 40 }} onSubmitEditing={() => {}} autoFocus={false} onFocus={() => this.props.navigation.navigate('ScreenSearchProperty', { searchString: this.state.searchString, onGoBack: (searchString) => this.refresh(searchString) })}
               />
             </View>
           </View>
         </Header>
-        <View style={{ height: 50, width: '100%', flexDirection: 'row', justifyContent: 'center' }}>
-          <TouchableOpacity style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#cdcdcd' }} onPress={() => this.setModalVisible(true)}>
+        <View style={{ height: 40, width: '100%', flexDirection: 'row', justifyContent: 'center' }}>
+          <TouchableOpacity style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#e3e3e3' }} onPress={() => this.setModalVisible(true)}>
             <View style={{ flexDirection: 'row' }}><Icon name='sliders' type='FontAwesome' style={{ color: '#000' }} /><Text style={{ marginLeft: 10 }}>Filter</Text></View>
           </TouchableOpacity>
           <View style={{ width: 1, backgroundColor: '#000', marginTop: 10, marginBottom: 10 }} />
           <TouchableOpacity
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#cdcdcd' }} onPress={() => {
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#e3e3e3' }} onPress={() => {
               ActionSheet.show(
                 {
                   options: BUTTONS,
@@ -105,29 +118,7 @@ class ScreenResultSearchProperty extends Component {
         <Content padder horizontal>
           <Text>Search Result</Text>
         </Content>
-        <Modal
-          animationType='slide'
-          transparent={false}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            // Alert.alert('Modal has been closed.')
-            this.setModalVisible(false)
-          }}
-        >
-          <View style={{ marginTop: 22 }}>
-            <View>
-              <Text>Component Filter sedang didevelop</Text>
-
-              <TouchableHighlight
-                onPress={() => {
-                  this.setModalVisible(false)
-                }}
-              >
-                <Text>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </Modal>
+        <FilterFormModal modalVisible={this.state.modalVisible} setModalVisible={this.setModalVisible} onRequestClose={() => {}} />
       </Container>
     )
   }

@@ -16,7 +16,6 @@ import styles from './style'
 import { Images } from '../../Themes'
 
 const drawerCover = Images.drawerCover
-const drawerImage = Images.drawerImage
 const datas = [
   {
     id: 1,
@@ -48,6 +47,13 @@ const datas = [
   },
   {
     id: 5,
+    name: 'Search',
+    route: 'ScreenSearchProperty',
+    icon: 'search',
+    bg: '#C5F442'
+  },
+  {
+    id: 6,
     name: 'Customers',
     route: 'Anatomy',
     icon: 'users',
@@ -74,7 +80,7 @@ class ScreenSidebar extends Component {
         >
           <ImageBackground source={drawerCover} style={{ flex: 1, height: 250, flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}>
             <View style={{ justifyContent: 'center', width: 90, padding: 10 }}>
-              <Thumbnail large source={drawerImage} style={{ backgroundColor: 'red' }} />
+              <Thumbnail large source={Images.userAvatar} style={{ backgroundColor: 'red' }} />
             </View>
             <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
               <Text style={{ fontSize: 14, color: '#fff' }}>Welcome</Text>

@@ -18,7 +18,7 @@ import {
   Input
 } from 'native-base'
 import {
-  ScrollView, Modal, TouchableHighlight, TouchableOpacity, View, Alert
+  ScrollView, Modal, TouchableHighlight, TouchableOpacity, View, Alert, StatusBar, Platform
 } from 'react-native'
 import { ListItem } from 'react-native-elements'
 import ListSearchHistoryString from '../../Containers/Search/ListSearchHistoryString'
@@ -57,7 +57,11 @@ class ScreenSearchProperty extends Component {
   }
 
   handleOnSubmitEditing (searchString) {
-    this.props.navigation.replace('ScreenResultSearchProperty', { searchString })
+    const onGoBack = path(['navigation', 'state', 'params', 'onGoBack'], this.props)
+    if (onGoBack) {
+      onGoBack(searchString)
+      this.props.navigation.goBack()
+    } else this.props.navigation.replace('ScreenResultSearchProperty', { searchString })
   }
 
   setModalVisible (visible) {
@@ -69,6 +73,7 @@ class ScreenSearchProperty extends Component {
     return (
       <Container style={styles.container}>
         <Header style={{ backgroundColor: '#fff' }}>
+          {Platform.OS === 'android' && <StatusBar barStyle='light-content' />}
           <View style={{ flexDirection: 'row', width: '100%', height: '100%', alignContent: 'center', justifyContent: 'center' }}>
             <View style={{ justifyContent: 'center' }}>
               <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ marginRight: 0, height: '100%', width: 40, justifyContent: 'center', alignItems: 'center' }}>

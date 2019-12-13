@@ -71,7 +71,7 @@ class ScreenHome extends Component {
                   </Text>
                 </LinearGradient>
               </Col>
-              <Col onPress={() => this.props.navigation.navigate('ScreenListProjects')} style={{ margin: 5 }}>
+              <Col onPress={() => {}} style={{ margin: 5 }}>
                 <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
                   <Icon type='FontAwesome5' name='download' style={{ color: '#000', fontSize: 70 }} />
                   <Text numberOfLines={1} style={{ fontSize: 14, color: '#000' }}>
@@ -89,11 +89,13 @@ class ScreenHome extends Component {
                   </Text>
                 </LinearGradient>
               </Col>
-              <Col onPress={() => {}} style={{ margin: 5 }}>
-                {/* <Icon name="logo-apple" style={{ color: "#999", fontSize: 90 }} />
-                      <Text numberOfLines={1} style={{fontSize: 14}}>
-                        Customer
-                      </Text> */}
+              <Col onPress={() => this.props.navigation.navigate('ScreenSearchProperty')} style={{ margin: 5 }}>
+                <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>
+                  <Icon name='search' type='FontAwesome5' style={{ color: '#000', fontSize: 70 }} />
+                  <Text numberOfLines={1} style={{ fontSize: 14 }}>
+                        Search
+                  </Text>
+                </LinearGradient>
               </Col>
               <Col onPress={() => {}} style={{ margin: 5 }}>
                 <LinearGradient colors={['#fff', '#cdcdcd', '#fff']} style={{ padding: 10, alignItems: 'center', borderWidth: 2, borderColor: '#cdcdcd' }}>

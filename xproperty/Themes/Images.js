@@ -91,7 +91,8 @@ const images = {
   logoModernLand: require('../Images/logoModernLand.png'),
   human: require('../Images/human.png'),
   homeBackground: require('../Images/homeBackground.png'),
-  clusterMapLayout: require('../Images/clusterMapLayout.png')
+  clusterMapLayout: require('../Images/clusterMapLayout.png'),
+  userAvatar: require('../Images/userAvatar.jpg')
 
 }
 

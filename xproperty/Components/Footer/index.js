@@ -86,7 +86,7 @@ class FooterComponent extends Component {
             {/* <Badge>
               <Text>2</Text>
             </Badge> */}
-            <Icon active={this.state.tab1} name='home' />
+            <Icon active={this.state.tab1} name='home' style={{ color: '#fff' }} />
             {/* <Image source={Images.QR} /> */}
             {/* <Text>Apps</Text> */}
           </Button>
@@ -94,7 +94,7 @@ class FooterComponent extends Component {
             active={this.state.tab2}
             onPress={() => this.props.navigation.navigate('ScreenListBooking')}
           >
-            <Icon active={this.state.tab2} name='book' />
+            <Icon active={this.state.tab2} name='book' style={{ color: '#fff' }} />
             {/* <Image source={Images.scan} style={{ height: 35, resizeMode: 'contain' }} /> */}
             {/* <Text>Pay</Text> */}
           </Button>
@@ -102,7 +102,7 @@ class FooterComponent extends Component {
             // active={this.state.tab3}
             onPress={() => this.props.sessionLogout()}
           >
-            <Icon active={this.state.tab2} name='account' type='MaterialCommunityIcons' />
+            <Icon active={this.state.tab2} name='account' type='MaterialCommunityIcons' style={{ color: '#fff' }} />
             {/* <Image source={Images.logout} style={{ height: 35, resizeMode: 'contain' }} /> */}
             {/* <Text>Logout</Text> */}
           </Button>
