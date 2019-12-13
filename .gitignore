@@ -57,3 +57,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+ios/AppCenter-Config.plist
+ios/GoogleService-Info.plist
+android/app/google-services.json
+android/app/src/main/assets/appcenter-config.json
